@@ -1,0 +1,38 @@
+@use 'scss-reset/reset';
+
+:root{
+
+  //colors
+  --primary-bg-color: white;
+  --primary-fg-color: black;
+
+  // container  
+  --max-container-width: 1000px;
+}
+// optional resets
+
+a{
+  text-decoration: none;
+  color: var(--primary-fg-color);
+}
+
+// main
+
+body{
+  font-family: var(--font-primary);
+  background: var(--primary-bg-color);
+  color: var(--primary-fg-color);
+}
+
+main{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 1020px) {
+    padding: 0 20px;
+  }
+}
+.container{
+  max-width: var(--max-container-width);
+  margin: 0 auto;
+}
