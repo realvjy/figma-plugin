@@ -2,12 +2,9 @@ import { Inter } from "next/font/google";
 import "../styles/globals.scss";
 import StyledComponentsRegistry from "@/styles/styled-registry";
 import { Metadata } from "next";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-primary",
-  display: "swap",
-});
+import localFont from 'next/font/local'
+const inter = localFont({ src: './fonts/interVariable.woff2', display:"swap",  variable: "--font-primary",
+})
 
 export const metadata: Metadata = {
   title: "Home",
@@ -19,6 +16,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
   return (
     <html lang="en">
       <body className={inter.variable}>

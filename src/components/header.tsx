@@ -2,56 +2,54 @@
 'use client'
 import Link from "next/link";
 import styled from "styled-components"
+import { Coolshape, shapeTypes } from 'coolshapes-react'
 
-export default function Header(){
+export default function Header({shape}: { shape: { shapeType: shapeTypes, index: number } }) {
 
-  return(
-    <Section>
+  return (<Section>
       <div className="container">
         <Wrapper>
           <LogoWrapper href={"/"}>
-            <img src="/next.svg" alt="home"/>
+            <Coolshape className={"img"} type={shape.shapeType} index={shape.index}/>
           </LogoWrapper>
-          <LinksWrapper>
-            <NavLink href="#link1">
-              about
-            </NavLink>
-            <NavLink href="#link1" className="themed">
-              contact
-            </NavLink>
-          </LinksWrapper>
+          <HeaderText>
+            Figma plugin I made over the years
+          </HeaderText>
         </Wrapper>
       </div>
-    </Section>
-  )
+    </Section>)
 }
 
-const Section = styled.header`
-  padding: 20px 0;
-  border-bottom: 1px solid #e9e7e7;
-`;
+const Section = styled.header``;
 const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  gap: 15px;
 `;
 const LogoWrapper = styled(Link)`
-  img{
-    height: 20px;
+  display: flex;
+
+  .img {
+    width: auto;
+    max-height: 48px;
   }
 `;
-const LinksWrapper = styled.div`
+const HeaderText = styled.div`
   display: flex;
   gap: 20px;
   align-items: center;
-  justify-content: center;
+  font-size: 1.68em;
+  font-weight: 600;
 `;
-const NavLink =  styled(Link)`
+
+const NavLink = styled(Link)`
   font-size: 16px;
   display: flex;
   align-items: center;
   text-align: center;
-  &.themed{
+
+  &.themed {
     padding: 4px 16px;
     background: black;
     border-radius: 20px;
