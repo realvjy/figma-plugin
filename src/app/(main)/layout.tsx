@@ -6,7 +6,7 @@ import { getRandomShape, shapeTypes } from "coolshapes-react";
 
 
 export default function Layout({children}: {children: ReactNode}){
-  const randomCoolshape = getRandomShape({onlyId: true}) ;
+  const randomCoolshape = getRandomShape({onlyId: true}) as any;
   return(
     <main>
       <Header shape={randomCoolshape} />
