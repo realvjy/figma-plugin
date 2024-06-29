@@ -3,7 +3,7 @@ import "../styles/globals.scss";
 import StyledComponentsRegistry from "@/styles/styled-registry";
 import { Metadata } from "next";
 import localFont from 'next/font/local'
-const inter = localFont({ src: './fonts/interVariable.woff2', display:"swap",  variable: "--font-primary",
+const inter = localFont({ src: './fonts/inter-variable.woff2', display:"swap",  variable: "--font-primary",
 })
 
 export const metadata: Metadata = {
