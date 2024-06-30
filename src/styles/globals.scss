@@ -10,7 +10,7 @@
   --color-text-blue: #066AFF;
   --color-bg-cyan: #CBEFFF;
   --color-text-orange: #FF4206;
-  --color-bg-orange: #FF4206;
+  --color-bg-orange: rgba(255, 228, 203, 1);
   --max-container-width: 480px;
 }
 
@@ -33,7 +33,7 @@ main {
   flex-direction: column;
   padding-top: 64px;
   @media screen and (max-width: 500px) {
-    padding: 0 20px;
+    padding: 50px 24px 0;
   }
 }
 

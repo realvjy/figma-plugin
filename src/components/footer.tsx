@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="container">
         <Wrapper>
           made by <span><Link target={"_blank"} href={"https://vjy.me"}>realvjy</Link></span> at <span><Link
-          target={"_blank"} href={"https://overlayz.co"}>@overlayz</Link></span> <span> <img
+          target={"_blank"} href={"https://overlayz.co"}>@overlayz</Link></span> <span className={"img"}> <img
           src={"/icons/twitter.svg"}/></span>
         </Wrapper>
       </div>
@@ -31,5 +31,8 @@ const Wrapper = styled.div`
   span {
     padding-inline: 5px;
     font-weight: 600;
+    &.img{
+      padding: 0;
+    }
   }
 `;

@@ -1,6 +1,6 @@
 export type pluginDatatype = {
   name: string,
-  id: string,
+  manifestId: string,
   slug: string,
   author: string,
   type: "free" | "paid" | "freemium",
@@ -14,57 +14,56 @@ export type pluginDatatype = {
 // TODO: automate fetching downloads
 export const pluginData: pluginDatatype[] = [{
   name: "Illlustrations",
-  id: "1107546399747513238",
+  manifestId: "1124370159336948073",
   slug: "illlustrations",
-  description: "100 free illustration created by me",
+  description: "Insert all 120+ illustrations from the illustrations.co open-source library, directly in your Figma and FigJam files as SVG/Vector.",
   author: "realvjy",
   type: "free",
-  downloads: 12000,
-  url: "https://figma.com"
-
+  downloads: 51000,
+  url: "https://illlustrations.co/figma/"
 }, {
   name: "3dicons",
-  id: "1107546399747513238",
+  manifestId: "1107546399747513238",
   description: "High quality hand crafted 3d icons",
   slug: "3dicons",
   author: "realvjy",
   type: "free",
-  downloads: 1200,
-  url: "https://illlustration.co"
+  downloads: 165000,
+  url: "https:/3dicons.co/figma"
 }, {
   name: "Noisy Gradients",
-  id: "1107546399747513238",
+  manifestId: "1174390287006360600",
   slug: "noisy-gradients",
-  description: "High quality hand crafted 3d icons",
+  description: "The plugin uses the Metavatar algorithm to create cool gradient backgrounds with added noise for visual impact.",
   author: "realvjy",
   type: "freemium",
-  downloads: 1200,
-  url: "https://figma.com"
+  downloads: 176000,
+  url: "https://tools.metavatar.app/figma"
 }, {
   name: "Hues & Gradients",
-  id: "1107546399747513238",
+  manifestId: "1361736324008749685",
   slug: "hues-and-gradients",
-  description: "High quality hand crafted 3d icons",
+  description: "Explore millions of color hues/shades/tones & gradients directly in figma for perfect color palettes that suit your design next project.",
   author: "realvjy",
   type: "free",
-  downloads: 1200,
-  url: "https://illlustration.co"
+  downloads: 4700,
+  url: "https://www.figma.com/community/plugin/1361736324008749685/hues-gradients"
 }, {
-  name: "Svg to Code",
-  id: "1107546399747513238",
+  name: "SVG to Code",
+  manifestId: "1348045528828166727",
   slug: "svg-to-code",
-  description: "High quality hand crafted 3d icons",
+  description: "This Figma (Dev) plugin allows you to generate react components from selected nodes instantly.",
   author: "realvjy",
   type: "free",
-  downloads: 1200,
-  url: "https://illlustration.co"
+  downloads: 1600,
+  url: "https://www.figma.com/community/plugin/1348045528828166727/svg-to-code-react-component"
 }, {
   name: "uilogos",
-  id: "1107546399747513238",
+  manifestId: "1107546399747513238",
   description: "High quality hand crafted 3d icons",
   slug: "uilogos",
   author: "realvjy",
   type: "free",
-  downloads: 1200,
-  url: "https://illlustration.co"
+  downloads: 22000,
+  url: "https://www.uilogos.co/"
 }]

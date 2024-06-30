@@ -14,10 +14,10 @@ export default function PluginComponent({pluginData}: { pluginData: pluginDataty
       </Thumbnail>
       <Content>
         <ContentHeader>
-          <div className={"plugin-type free"}>
+          <div className={"plugin-type " + pluginData.type}>
             {pluginData.type}
           </div>
-          <div className={"downloads "}>
+          <div className={"downloads"}>
             {downloads} Usages
           </div>
         </ContentHeader>
@@ -85,6 +85,9 @@ export const ContentHeader = styled.div`
     font-size: 1em;
     color: var(--primary-fg-text);
     font-weight: 600;
+    @media screen and (max-width: 500px) {
+      font-size: 0.9em;
+    }
   }
 `;
 export const PluginLogo = styled.div`
@@ -107,12 +110,18 @@ export const PluginTitle = styled.h3`
   font-size: 20px;
   text-transform: capitalize;
   margin-top: 8px;
+  @media screen and (max-width: 500px) {
+    font-size: 18px;
+  }
 `;
 export const PluginDescription = styled.p`
   font-size: 1.12em;
   font-weight: 400;
   color: var(--primary-fg-text);
   margin-top: 8px;
+  @media screen and (max-width: 500px) {
+    font-size: 1em;
+  }
 `;
 export const PluginButton = styled(Link)`
   font-size: 1em;
