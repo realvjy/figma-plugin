@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   gap: 25px;
 `;
 
-export const FButton = styled(Link)`
+const FButton = styled(Link)`
   font-size: 1em;
   border-radius: 15px;
   padding: 8px 20px;
