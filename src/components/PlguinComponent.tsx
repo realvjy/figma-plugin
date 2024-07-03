@@ -1,36 +1,40 @@
-'use client'
+"use client";
 import { pluginDatatype } from "@/lib/plguin-data";
 import styled from "styled-components";
 import Link from "next/link";
 
-
-export default function PluginComponent({pluginData}: { pluginData: pluginDatatype }) {
-  const downloads = Intl.NumberFormat('en-US', {
-    notation: "compact", maximumFractionDigits: 1
+export default function PluginComponent({
+  pluginData,
+}: {
+  pluginData: pluginDatatype;
+}) {
+  const downloads = Intl.NumberFormat("en-US", {
+    notation: "compact",
+    maximumFractionDigits: 1,
   }).format(pluginData.downloads);
-  return (<Wrapper>
+  return (
+    <Wrapper>
       <Thumbnail>
-        <img src={`/thumbnails/${pluginData.slug}.png`}/>
+        <img src={`/thumbnails/${pluginData.slug}.png`} />
       </Thumbnail>
       <Content>
         <ContentHeader>
-          <div className={"plugin-type free"}>
-            {pluginData.type}
-          </div>
-          <div className={"downloads "}>
-            {downloads} Usages
-          </div>
+          <div className={"plugin-type free"}>{pluginData.type}</div>
+          <div className={"downloads "}>{downloads} Usages</div>
         </ContentHeader>
         <PluginTitle>{pluginData.name}</PluginTitle>
         <PluginDescription> {pluginData.description} </PluginDescription>
-        <PluginButton href={pluginData.url} target={"_blank"}> try now </PluginButton>
+        <PluginButton href={pluginData.url} target={"_blank"}>
+          {" "}
+          try now{" "}
+        </PluginButton>
         <PluginLogo>
-          <img src={`/plugin-logos/${pluginData.slug}.png`}/>
+          <img src={`/plugin-logos/${pluginData.slug}.png`} />
         </PluginLogo>
       </Content>
-    </Wrapper>)
+    </Wrapper>
+  );
 }
-
 
 export const Wrapper = styled.div`
   max-width: 100%;
@@ -74,13 +78,12 @@ export const ContentHeader = styled.div`
       color: var(--color-text-blue);
     }
 
-    &.freemium, &.pad {
+    &.freemium,
+    &.pad {
       background: var(--color-bg-orange);
       color: var(--color-text-orange);
     }
   }
-;
-
   .downloads {
     font-size: 1em;
     color: var(--primary-fg-text);
@@ -99,8 +102,6 @@ export const PluginLogo = styled.div`
   img {
     height: 48px;
   }
-;
-
 `;
 export const PluginTitle = styled.h3`
   font-weight: 700;
@@ -122,5 +123,3 @@ export const PluginButton = styled(Link)`
   color: var(--primary-bg-color);
   margin-top: 18px;
 `;
-
-

@@ -1,23 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
-'use client'
+"use client";
 import Link from "next/link";
-import styled from "styled-components"
-import { Coolshape, shapeTypes } from 'coolshapes-react'
+import styled from "styled-components";
+import { Coolshape, shapeTypes } from "coolshapes-react";
 
-export default function Header({shape}: { shape: { shapeType: shapeTypes, index: number } }) {
-
-  return (<Section>
+export default function Header({
+  shape,
+}: {
+  shape: { shapeType: shapeTypes; index: number };
+}) {
+  return (
+    <Section>
       <div className="container">
         <Wrapper>
           <LogoWrapper href={"/"}>
-            <Coolshape className={"img"} type={shape.shapeType} index={shape.index}/>
+            <Coolshape className={"img"} type={"misc"} index={3} />
           </LogoWrapper>
-          <HeaderText>
-            Figma plugin I made over the years
-          </HeaderText>
+          {/* <HeaderText>Figma plugin I made over the years</HeaderText> */}
         </Wrapper>
       </div>
-    </Section>)
+    </Section>
+  );
 }
 
 const Section = styled.header``;
@@ -26,13 +29,14 @@ const Wrapper = styled.div`
   justify-content: space-between;
   flex-direction: column;
   gap: 15px;
+  align-items: center;
 `;
 const LogoWrapper = styled(Link)`
   display: flex;
 
   .img {
     width: auto;
-    max-height: 48px;
+    max-height: 60px;
   }
 `;
 const HeaderText = styled.div`
