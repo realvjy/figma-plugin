@@ -19,9 +19,9 @@ export default function Home() {
         <div className="screenshot">
           <img src="screenshot.png" />
         </div>
-        <Button href={"https://figma.com/@realvjy"} target={"_blank"}>
+        <FButton href={"https://figma.com/@realvjy"} target={"_blank"}>
           Figma @realvjy
-        </Button>
+        </FButton>
       </div>
     </MainSection>
   );
@@ -41,7 +41,7 @@ const Wrapper = styled.div`
   gap: 25px;
 `;
 
-export const Button = styled(Link)`
+export const FButton = styled(Link)`
   font-size: 1em;
   border-radius: 15px;
   padding: 8px 20px;
