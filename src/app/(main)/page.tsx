@@ -1,51 +1,53 @@
 "use client";
-
+import Footer from "@/components/footer";
+import Header from "@/components/header";
 import styled from "styled-components";
 import PluginComponent from "@/components/PlguinComponent";
 import { pluginData } from "@/lib/plguin-data";
-import Link from "next/link";
+import { getRandomShape, shapeTypes } from "coolshapes-react";
 
 //TODO: reformat everything and add more animations
 
 export default function Home() {
+  const randomCoolshape = getRandomShape({ onlyId: true }) as any;
   return (
-    <MainSection>
-      <div className="container">
-        {/* <Wrapper>
-          {pluginData.map((data) => {
-            return <PluginComponent pluginData={data} />;
-          })}
-        </Wrapper> */}
-        <div className="screenshot">
-          <img src="screenshot.png" />
+    <>
+      <Header shape={randomCoolshape} />
+      <MainSection>
+        <div className="container">
+          <MainWrapper>
+            {pluginData.map((data) => {
+              return <PluginComponent pluginData={data} />;
+            })}
+          </MainWrapper>
         </div>
-        <FButton href={"https://figma.com/@realvjy"} target={"_blank"}>
-          Figma @realvjy
-        </FButton>
-      </div>
-    </MainSection>
+      </MainSection>
+      <Footer />
+    </>
   );
 }
 
-const MainSection = styled.section`
-  .screenshot {
-    margin-top: 40px;
-  }
+const MainSection = styled.section``;
+
+const MainWrapper = styled.div`
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 `;
 
-const Wrapper = styled.div`
+const Nav = styled.nav`
+  display: flex;
+  flex-direction: column;
+  width: 260px;
+  padding-top: 120px;
+`;
+const PluginWrapper = styled.div`
   text-align: center;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
   gap: 25px;
-`;
-
-const FButton = styled(Link)`
-  font-size: 1em;
-  border-radius: 15px;
-  padding: 8px 20px;
-  background: var(--primary-fg-color);
-  color: var(--primary-bg-color);
-  margin-top: 18px;
+  /* overflow: auto; */
+  width: 345px;
 `;

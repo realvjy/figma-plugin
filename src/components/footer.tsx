@@ -1,18 +1,32 @@
-'use client'
-import styled from "styled-components"
+"use client";
+import styled from "styled-components";
 import Link from "next/link";
 
 export default function Footer() {
-
-  return (<Section>
+  return (
+    <Section>
       <div className="container">
         <Wrapper>
-          made by <span><Link target={"_blank"} href={"https://vjy.me"}>realvjy</Link></span> at <span><Link
-          target={"_blank"} href={"https://overlayz.co"}>@overlayz</Link></span> <span className={"img"}> <img
-          src={"/icons/twitter.svg"}/></span>
+          made by
+          <span>
+            <Link target={"_blank"} href={"https://vjy.me"}>
+              realvjy
+            </Link>
+          </span>
+          at
+          <span>
+            <Link target={"_blank"} href={"https://overlayz.co"}>
+              @overlayz
+            </Link>
+          </span>{" "}
+          <span className={"img"}>
+            {" "}
+            <img src={"/icons/twitter.svg"} />
+          </span>
         </Wrapper>
       </div>
-    </Section>)
+    </Section>
+  );
 }
 
 const Section = styled.footer`
@@ -31,7 +45,7 @@ const Wrapper = styled.div`
   span {
     padding-inline: 5px;
     font-weight: 600;
-    &.img{
+    &.img {
       padding: 0;
     }
   }

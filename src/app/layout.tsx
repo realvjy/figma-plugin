@@ -1,13 +1,9 @@
-import { Inter } from "next/font/google";
+import { JetBrains_Mono } from "next/font/google";
 import "../styles/globals.scss";
 import StyledComponentsRegistry from "@/styles/styled-registry";
 import { Metadata } from "next";
 import localFont from "next/font/local";
-const inter = localFont({
-  src: "./fonts/inter-variable.woff2",
-  display: "swap",
-  variable: "--font-primary",
-});
+import { inter, jetBrainsMono } from "@/styles/fonts";
 
 export const metadata: Metadata = {
   title: "Figma Plugin",
@@ -20,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.variable}>
+    <html lang="en" className={`${jetBrainsMono.variable} ${inter.variable}`}>
+      <body>
         <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
       </body>
     </html>
