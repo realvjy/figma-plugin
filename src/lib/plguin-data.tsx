@@ -4,16 +4,21 @@ export type pluginDatatype = {
   slug: string;
   author: string;
   type: "free" | "paid" | "freemium";
+  hide?: false;
+  featured?: false;
   downloads: number;
+  likes: number;
   logoType?: "circle";
   description?: string;
-  url: string;
+  figmaurl: string;
+  id: number;
 };
 
 // see public folder for thumbnail and logos
 // TODO: automate fetching downloads
 export const pluginData: pluginDatatype[] = [
   {
+    id: 1,
     name: "Illlustrations",
     manifestId: "1124370159336948073",
     slug: "illlustrations",
@@ -21,60 +26,73 @@ export const pluginData: pluginDatatype[] = [
       "Insert all 120+ illustrations from the illustrations.co open-source library",
     author: "realvjy",
     type: "free",
-    downloads: 51000,
-    url: "https://illlustrations.co/figma/",
+    downloads: 218000,
+    likes: 504,
+    figmaurl: "https://www.figma.com/community/file/810922307190314237",
   },
   {
+    id: 1,
     name: "3dicons",
     manifestId: "1107546399747513238",
-    description: "High quality hand crafted 3d icons",
+    description: "High quality hand crafted open-source 3d icons",
     slug: "3dicons",
     author: "realvjy",
     type: "free",
-    downloads: 165000,
-    url: "https:/3dicons.co/figma",
+    downloads: 169000,
+    likes: 1700,
+    figmaurl:
+      "https://www.figma.com/community/plugin/1107546399747513238/3dicons",
   },
   {
+    id: 1,
     name: "Noisy Gradients",
     manifestId: "1174390287006360600",
     slug: "noisy-gradients",
-    description:
-      "The plugin uses the Metavatar algorithm to create cool gradient backgrounds with added noise for visual impact.",
+    description: "Create cool gradient backgrounds with noise",
     author: "realvjy",
     type: "freemium",
-    downloads: 176000,
-    url: "https://tools.metavatar.app/figma",
+    downloads: 180000,
+    likes: 2600,
+    figmaurl:
+      "https://www.figma.com/community/plugin/1174390287006360600/noisy-gradients",
   },
   {
+    id: 1,
     name: "Hues & Gradients",
     manifestId: "1361736324008749685",
     slug: "hues-and-gradients",
-    description:
-      "Explore millions of color hues/shades/tones & gradients directly in figma for perfect color palettes that suit your design next project.",
+    description: "Explore millions of color hues/shades/tones & gradients",
     author: "realvjy",
     type: "free",
-    downloads: 4700,
-    url: "https://www.figma.com/community/plugin/1361736324008749685/hues-gradients",
+    downloads: 5100,
+    likes: 200,
+    figmaurl:
+      "https://www.figma.com/community/plugin/1361736324008749685/hues-gradients",
   },
   {
+    id: 1,
     name: "SVG to Code",
     manifestId: "1348045528828166727",
     slug: "svg-to-code",
     description:
-      "This Figma (Dev) plugin allows you to generate react components from selected nodes instantly.",
+      "Generate SVG react components from selected object instantly.",
     author: "realvjy",
     type: "free",
     downloads: 1600,
-    url: "https://www.figma.com/community/plugin/1348045528828166727/svg-to-code-react-component",
+    likes: 218000,
+    figmaurl:
+      "https://www.figma.com/community/plugin/1348045528828166727/svg-to-code-react-component",
   },
   {
+    id: 1,
     name: "uilogos",
     manifestId: "1107546399747513238",
-    description: "High quality hand crafted 3d icons",
+    description: "Free Professional looking logo placeholder ",
     slug: "uilogos",
     author: "realvjy",
     type: "free",
     downloads: 22000,
-    url: "https://www.uilogos.co/",
+    likes: 218000,
+    figmaurl: "https://www.uilogos.co/",
   },
 ];

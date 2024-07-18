@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Link from "next/link";
 import React, { useState } from "react";
 import { ArrowIcon } from "@/lib/common";
+import TypingEffect from "./TypingEffect";
 
 export default function PluginComponent({
   pluginData,
@@ -14,6 +15,11 @@ export default function PluginComponent({
     notation: "compact",
     maximumFractionDigits: 1,
   }).format(pluginData.downloads);
+
+  const likes = Intl.NumberFormat("en-US", {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(pluginData.likes);
 
   const [transformOrigin, setTransformOrigin] = useState("center center");
   const [isHovered, setIsHovered] = useState(false);
@@ -31,6 +37,10 @@ export default function PluginComponent({
   const handleMouseLeave = () => {
     setIsHovered(false);
   };
+  const words = [
+    { key: "likes", type: `stat`, value: `${likes}` },
+    { key: "usage", type: `stat`, value: `${downloads}` },
+  ];
 
   return (
     <Wrapper
@@ -44,7 +54,11 @@ export default function PluginComponent({
       <CardBase>
         <img src="/card.png" className="card" />
       </CardBase>
-
+      <h4 className="credit">figmaplug.in</h4>
+      <div className="cut">
+        <img src="/cut.png" className="normal" />
+        <img src="/cut-hover.png" className="hov" />
+      </div>
       <PluginLogo>
         <img src={`/plugin-logos/${pluginData.slug}.png`} />
       </PluginLogo>
@@ -53,8 +67,8 @@ export default function PluginComponent({
           <PluginTitle>{pluginData.name}</PluginTitle>
           <PluginDescription> {pluginData.description} </PluginDescription>
           <ContentMeta>
-            <div className={"info downloads"}>
-              <ArrowIcon /> {downloads} Usages
+            <div className={"info"}>
+              <TypingEffect words={words} />
             </div>
             <Badge className="free">{pluginData.type}</Badge>
           </ContentMeta>
@@ -77,23 +91,62 @@ export const Wrapper = styled.div`
   cursor: pointer;
   transition: transform 0.3s ease;
   transform-origin: top left; /* Set the anchor point for rotation */
-  &:hover {
-    transform: rotate(2deg); /* Rotate 45 degrees on hover */
-  }
+
   .card {
     max-width: 344px;
+  }
+
+  .cut {
+    position: absolute;
+    bottom: 0;
+    width: 38px;
+    height: 24px;
+    left: calc(50% + 10px);
+    bottom: 18px;
+    transform: translateX(-50%);
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all ease 300ms;
+      &.hov {
+        opacity: 0;
+        max-width: 94px !important;
+      }
+    }
+  }
+  &:hover {
+    transform: rotate(2deg); /* Rotate 45 degrees on hover */
+    .cut {
+      .normal {
+        opacity: 0;
+      }
+      .hov {
+        opacity: 1;
+        mix-blend-mode: overlay;
+      }
+    }
+  }
+
+  .credit {
+    position: absolute;
+    transform: rotate(-90deg) translateX(-100%);
+    left: -36px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #4e4e4e;
+    text-shadow: 0px 1px 1px #000000;
   }
 `;
 
 const CardBase = styled.div`
   position: absolute;
   top: 0;
-  filter: drop-shadow(11px 10px 26.8px rgba(0, 0, 0, 0.35));
+  filter: drop-shadow(11px 10px 26.8px rgba(0, 0, 0, 0.55));
 `;
 export const Thumbnail = styled.div`
-  /* height: 60%; */
-  background: red;
-  /* width: 100%; */
   img {
     border-radius: 6px;
   }
@@ -110,18 +163,18 @@ export const Content = styled.div`
   flex-direction: column;
   height: fit-content;
   justify-content: space-between;
-  padding: 10px;
+  padding: 14px 12px;
   transform: translateX(10px) translateY(60px);
   height: 260px;
   width: 260px;
   background: linear-gradient(
-      163.75deg,
-      rgba(103, 103, 103, 0.2) 11.29%,
-      rgba(14, 14, 14, 0) 97.3%
+      160deg,
+      rgba(103, 103, 103, 0.2) 14%,
+      rgba(14, 14, 14, 0.2) 97.3%
     ),
-    #0e0e0e;
+    #0c0c0c;
   box-shadow: 0.6px 0.6px 0px rgba(255, 255, 255, 0.25),
-    inset 0px 4.8px 4.8px rgba(0, 0, 0, 0.25),
+    inset 0px 4.8px 4.8px rgba(0, 0, 0, 0.2),
     inset 0px 2.4px 1.2px rgba(0, 0, 0, 0.45);
   border-radius: 10px;
 `;
@@ -131,7 +184,7 @@ export const ContentMeta = styled.div`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  margin-top: 8px;
+  margin-top: 12px;
   margin-bottom: 4px;
   align-items: center;
   .info {
@@ -158,9 +211,8 @@ export const ContentMeta = styled.div`
     }
   }
   .downloads {
-    color: var(--primary-fg-text);
+    color: var(--primary-fg-color);
     @media screen and (max-width: 500px) {
-      font-size: 0.9em;
     }
   }
 `;
@@ -191,20 +243,25 @@ export const PluginLogo = styled.div`
 export const PluginTitle = styled.h3`
   font-weight: 700;
   font-size: 17px;
+  margin-top: 4px;
   text-transform: capitalize;
   font-family: var(--font-inter);
   @media screen and (max-width: 500px) {
-    font-size: 17px;
   }
 `;
 export const PluginDescription = styled.p`
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 400;
-  line-height: 15px;
+  line-height: 16px;
+  letter-spacing: -0.5px;
   color: var(--primary-fg-text);
   margin-top: 8px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
   @media screen and (max-width: 500px) {
-    font-size: 1em;
   }
 `;
 export const PluginButton = styled(Link)`

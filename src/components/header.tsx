@@ -18,7 +18,7 @@ export default function Header({
             {/* <Coolshape className={"logo"} type={"star"} index={9} /> */}
             <img src="figmaplugin.png" />
           </LogoWrapper>
-          <HeaderText>Figma plugins I made over the years 🪄</HeaderText>
+          <HeaderText>Figma plugins I made over the years ✨</HeaderText>
           <Button href={"https://figma.com/@realvjy"} target={"_blank"}>
             <FigmaIcon height={18} /> @realvjy
           </Button>
@@ -105,4 +105,12 @@ const Button = styled(Link)`
   border-radius: 12px;
   color: var(--primary-fg-color);
   font-family: var(--font-inter);
+  transition: all ease 300ms;
+  &:hover {
+    background: linear-gradient(
+      90deg,
+      rgba(61, 61, 61, 0.5) 100%,
+      rgba(24, 24, 24, 0) 0%
+    );
+  }
 `;

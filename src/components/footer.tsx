@@ -9,19 +9,23 @@ export default function Footer() {
         <Wrapper>
           made by
           <span>
-            <Link target={"_blank"} href={"https://vjy.me"}>
-              realvjy
+            <Link target={"_blank"} href={"https://vjy.me?figmaplugin"}>
+              <img src="realvjy.svg" />
             </Link>
           </span>
           at
           <span>
-            <Link target={"_blank"} href={"https://overlayz.co"}>
+            <Link
+              target={"_blank"}
+              href={"https://overlayz.studio?figmaplugin"}
+            >
               @overlayz
             </Link>
           </span>{" "}
           <span className={"img"}>
-            {" "}
-            <img src={"/icons/twitter.svg"} />
+            <Link target="" href={"https://x.com/realvjy"}>
+              <img src={"/icons/twitter.svg"} />
+            </Link>
           </span>
         </Wrapper>
       </div>
@@ -38,13 +42,21 @@ const Wrapper = styled.div`
   justify-content: center;
   margin-top: 100px;
   padding: 40px 0;
-  font-size: 1em;
+  font-size: 15px;
   font-weight: 500;
   color: #626262;
-
+  gap: 4px;
+  font-family: var(--font-inter);
+  align-items: center;
   span {
     padding-inline: 5px;
     font-weight: 600;
+    a {
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+      }
+    }
     &.img {
       padding: 0;
     }

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import PluginComponent from "@/components/PlguinComponent";
 import { pluginData } from "@/lib/plguin-data";
 import { getRandomShape, shapeTypes } from "coolshapes-react";
+import Link from "next/link";
 
 //TODO: reformat everything and add more animations
 
@@ -17,7 +18,11 @@ export default function Home() {
         <div className="container">
           <MainWrapper>
             {pluginData.map((data) => {
-              return <PluginComponent pluginData={data} />;
+              return (
+                <Link href={data.figmaurl}>
+                  <PluginComponent pluginData={data} />
+                </Link>
+              );
             })}
           </MainWrapper>
         </div>
