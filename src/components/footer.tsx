@@ -40,9 +40,10 @@ const Section = styled.footer`
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 30px;
   padding: 40px 0;
-  font-size: 15px;
+  font-size: 14px;
+  letter-spacing: -0.2px;
   font-weight: 500;
   color: #626262;
   gap: 4px;
@@ -50,7 +51,7 @@ const Wrapper = styled.div`
   align-items: center;
   span {
     padding-inline: 5px;
-    font-weight: 600;
+    font-weight: 500;
     a {
       opacity: 0.5;
       &:hover {

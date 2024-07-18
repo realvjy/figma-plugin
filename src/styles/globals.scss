@@ -3,7 +3,7 @@
 :root {
 
   //colors
-  --primary-bg-color: #131313;
+  --primary-bg-color: #161618;
   --primary-fg-color: #ffffff;
   --primary-fg-text: rgba(200, 200, 200, 0.7);
   --primary-border-color: rgba(200, 200, 200, 9%);
@@ -13,7 +13,7 @@
   --color-bg-orange: rgba(255, 228, 203, 1);
   --max-container-width: 400px;
 }
-
+ 
 a {
   text-decoration: none;
   color: var(--primary-fg-color);
@@ -32,7 +32,6 @@ main {
   display: block;
   position: relative;
   @media screen and (max-width: 500px) {
-    padding: 50px 24px 0;
   }
 }
 

@@ -144,7 +144,8 @@ export const Wrapper = styled.div`
 const CardBase = styled.div`
   position: absolute;
   top: 0;
-  filter: drop-shadow(11px 10px 26.8px rgba(0, 0, 0, 0.55));
+  filter: drop-shadow(16px 10px 12px rgba(0, 0, 0, 0.5))
+    drop-shadow(8px 12px 8px rgba(0, 0, 0, 0.55));
 `;
 export const Thumbnail = styled.div`
   img {

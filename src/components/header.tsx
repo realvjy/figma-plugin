@@ -18,7 +18,7 @@ export default function Header({
             {/* <Coolshape className={"logo"} type={"star"} index={9} /> */}
             <img src="figmaplugin.png" />
           </LogoWrapper>
-          <HeaderText>Figma plugins I made over the years ✨</HeaderText>
+          <HeaderText>Figma plugins I made over the years</HeaderText>
           <Button href={"https://figma.com/@realvjy"} target={"_blank"}>
             <FigmaIcon height={18} /> @realvjy
           </Button>
