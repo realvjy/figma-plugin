@@ -1,0 +1,23 @@
+<svg width="1440" height="423" viewBox="0 0 1440 423" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_102_266)">
+<g opacity="0.4">
+<g filter="url(#filter0_f_102_266)">
+<path d="M1176.81 -38.5851C1474.9 182.195 -34.8952 182.195 263.189 -38.5851C535.765 -240.472 904.235 -240.472 1176.81 -38.5851Z" fill="url(#paint0_linear_102_266)"/>
+</g>
+</g>
+</g>
+<defs>
+<filter id="filter0_f_102_266" x="44" y="-370" width="1352" height="677" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="90" result="effect1_foregroundBlur_102_266"/>
+</filter>
+<linearGradient id="paint0_linear_102_266" x1="720" y1="-86.9024" x2="720" y2="145.543" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FF0000"/>
+<stop offset="1" stop-color="#2F00FF" stop-opacity="0"/>
+</linearGradient>
+<clipPath id="clip0_102_266">
+<rect width="1440" height="423" fill="white"/>
+</clipPath>
+</defs>
+</svg>

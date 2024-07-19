@@ -11,7 +11,7 @@ export default {
             {
                 width: 1200,
                 height: 630,
-                url: `https://figmaplug.in`,
+                url: `https://figmaplug.in/preview.jpg`,
             },
         ],
         site_name: 'realvjy',
