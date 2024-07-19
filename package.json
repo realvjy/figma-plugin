@@ -11,6 +11,8 @@
   "dependencies": {
     "coolshapes-react": "^1.0.1",
     "next": "14.1.4",
+    "next-seo": "^6.5.0",
+    "nextjs-google-analytics": "^2.3.3",
     "react": "^18",
     "react-dom": "^18",
     "styled-components": "^6.1.8"

@@ -243,10 +243,10 @@ export const PluginLogo = styled.div`
 `;
 export const PluginTitle = styled.h3`
   font-weight: 700;
-  font-size: 17px;
+  font-size: 16px;
+  letter-spacing: 0.3px;
   margin-top: 4px;
-  text-transform: capitalize;
-  font-family: var(--font-inter);
+  text-transform: uppercase;
   @media screen and (max-width: 500px) {
   }
 `;
