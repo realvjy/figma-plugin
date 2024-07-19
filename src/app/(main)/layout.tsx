@@ -1,17 +1,31 @@
+"use client";
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import ShootingStars from "@/components/ShootingStars";
+import StarBackground from "@/components/StarBackground";
 import { ReactNode } from "react";
-import { getRandomShape, shapeTypes } from "coolshapes-react";
+import styled from "styled-components";
 
-
-
-export default function Layout({children}: {children: ReactNode}){
-  const randomCoolshape = getRandomShape({onlyId: true}) as any;
-  return(
-    <main>
-      <Header shape={randomCoolshape} />
+export default function Layout({ children }: { children: ReactNode }) {
+  return (
+    <Main>
+      <StarWrapper>
+        <StarBackground />
+        <ShootingStars />
+      </StarWrapper>
       {children}
-      <Footer/>
-    </main>
-  )
+    </Main>
+  );
 }
+
+const Main = styled.main`
+  position: relative;
+  min-height: 100vh;
+`;
+
+const StarWrapper = styled.div`
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+`;

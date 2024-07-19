@@ -3,17 +3,17 @@
 :root {
 
   //colors
-  --primary-bg-color: #FFFFFF;
-  --primary-fg-color: #000000;
-  --primary-fg-text: rgba(0, 0, 0, 48%);
-  --primary-border-color: rgba(0, 0, 0, 9%);
+  --primary-bg-color: #161618;
+  --primary-fg-color: #ffffff;
+  --primary-fg-text: rgba(200, 200, 200, 0.7);
+  --primary-border-color: rgba(200, 200, 200, 9%);
   --color-text-blue: #066AFF;
   --color-bg-cyan: #CBEFFF;
   --color-text-orange: #FF4206;
   --color-bg-orange: rgba(255, 228, 203, 1);
-  --max-container-width: 480px;
+  --max-container-width: 400px;
 }
-
+ 
 a {
   text-decoration: none;
   color: var(--primary-fg-color);
@@ -22,18 +22,16 @@ a {
 // main
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-jetBrainsMono);
   background: var(--primary-bg-color);
   color: var(--primary-fg-color);
 }
 
 main {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  padding-top: 64px;
+  display: block;
+  position: relative;
   @media screen and (max-width: 500px) {
-    padding: 50px 24px 0;
   }
 }
 
