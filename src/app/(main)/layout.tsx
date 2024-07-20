@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: ReactNode }) {
 const Main = styled.main`
   position: relative;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
   &::before {
     content: "";
     position: absolute;
