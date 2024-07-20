@@ -30,15 +30,15 @@ const Main = styled.main`
     left: 50%;
     top: -50px;
     transform: translate(-50%, -50%);
-    height: 350px;
+    height: 250px;
     width: 800px;
     mix-blend-mode: color-dodge;
     border-radius: 50%;
     filter: blur(62px);
     background: linear-gradient(
       0deg,
-      rgba(25, 0, 255, 0.2) 0%,
-      rgba(255, 0, 0, 1) 100%
+      rgba(43, 0, 255, 0.415) 0%,
+      rgba(255, 0, 0, 0.8) 100%
     );
     z-index: -1;
     pointer-events: none;

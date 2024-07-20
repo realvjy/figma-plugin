@@ -141,8 +141,8 @@ export const Wrapper = styled.div`
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #4e4e4e;
-    text-shadow: 0px 1px 1px #000000;
+    color: #606060;
+    text-shadow: 0px 1.5px 1px #000000;
   }
 `;
 

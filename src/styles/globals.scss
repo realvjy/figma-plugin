@@ -3,7 +3,7 @@
 :root {
 
   //colors
-  --primary-bg-color: #141416;
+  --primary-bg-color: #141415;
   --primary-fg-color: #ffffff;
   --primary-fg-text: rgba(200, 200, 200, 0.7);
   --primary-border-color: rgba(200, 200, 200, 9%);
@@ -28,6 +28,27 @@ body {
   min-height: 100vh;
   
 }
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 0px;
+}
+
+::-webkit-scrollbar-track {
+  padding: 0 1px;
+  background: var(--primary-bg-color);
+  border-left: 1px solid rgba(120,120,120,0.1);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+  background: rgba(120,120,120,0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
 
 main {
   min-height: 100vh;

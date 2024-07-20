@@ -57,10 +57,10 @@ const Family = styled.div`
   position: fixed;
   display: flex;
   justify-content: right;
-  overflow: hidden;
   @media screen and (max-width: 500px) {
     position: relative;
     justify-content: center;
+    overflow: hidden;
   }
   .color {
     position: absolute;
@@ -77,7 +77,7 @@ const Family = styled.div`
     filter: blur(62px);
   }
   .wrap {
-    padding: 40px;
+    padding: 20px 40px;
     display: flex;
     align-items: end;
     flex-direction: column;

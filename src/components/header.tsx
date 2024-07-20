@@ -45,8 +45,8 @@ const LogoWrapper = styled(Link)`
   img {
     max-width: 64px;
     transition: transform 1200ms ease;
-    filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.9))
-      drop-shadow(3px 2px 6px rgba(0, 0, 0, 0.5));
+    filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.4))
+      drop-shadow(3px 2px 6px rgba(0, 0, 0, 0.2));
     &:hover {
       transform: rotate(360deg);
     }
@@ -71,7 +71,7 @@ const HeaderText = styled.h1`
   background: linear-gradient(
     to right,
     #ffffff,
-    #818181
+    #696969
   ); /* Define the gradient colors */
   -webkit-background-clip: text; /* Safari/Chrome */
   -webkit-text-fill-color: transparent; /* Safari/Chrome */
@@ -95,20 +95,21 @@ const NavLink = styled(Link)`
 
 const Button = styled(Link)`
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
   border-radius: 15px;
-  padding: 10px 20px;
+  padding: 12px 24px;
   margin-top: 18px;
   display: flex;
   align-items: center;
   gap: 6px;
+  letter-spacing: -0.2px;
   background: linear-gradient(
     90deg,
     rgba(61, 61, 61, 0.5) 0%,
     rgba(45, 45, 45, 0.1) 100%
   );
-  box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.25),
-    inset 0px 0px 1px rgba(255, 255, 255, 0.25);
+  box-shadow: 1px 2px 1px rgba(0, 0, 0, 0.3),
+    inset 0px 0px 1px 1px rgba(155, 155, 155, 0.25);
   border-radius: 12px;
   color: var(--primary-fg-color);
   font-family: var(--font-inter);

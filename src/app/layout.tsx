@@ -5,6 +5,7 @@ import { Metadata } from "next";
 import localFont from "next/font/local";
 import { inter, jetBrainsMono } from "@/styles/fonts";
 import seoData from "@/lib/next-seo.config";
+import AnalyticsProvider from "@/lib/analytics";
 
 export const metadata = {
   metadataBase: new URL(seoData.openGraph.url),
@@ -58,7 +59,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${jetBrainsMono.variable} ${inter.variable}`}>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <StyledComponentsRegistry>
+          <AnalyticsProvider children={undefined} />
+          {children}
+        </StyledComponentsRegistry>
       </body>
     </html>
   );
