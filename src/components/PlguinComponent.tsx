@@ -102,7 +102,7 @@ export const Wrapper = styled.div`
     width: 38px;
     height: 24px;
     left: calc(50% + 10px);
-    bottom: 18px;
+    bottom: 17.5px;
     transform: translateX(-50%);
     img {
       position: absolute;
@@ -230,14 +230,24 @@ const Badge = styled.div`
 `;
 export const PluginLogo = styled.div`
   /* transform: translateY(calc(-50% - 12px)); */
-  border-radius: 12px;
   right: 20px;
-  top: 7px;
   position: absolute;
   display: flex;
+  top: 7px;
+  .logo-fx {
+    top: 0;
+    background-color: rgba(250, 0, 0, 0.7);
+    transform: translateX(30px);
+    height: 6px;
+    width: 40px;
+    filter: blur(12px);
+    border-radius: 50%;
+  }
   img {
+    z-index: 1;
     height: 26px;
     border-radius: 6px;
+
     border: 1px solid rgba(220, 220, 220, 0.2);
   }
 `;

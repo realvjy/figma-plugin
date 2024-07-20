@@ -20,7 +20,6 @@ export default function Layout({ children }: { children: ReactNode }) {
 
 const Main = styled.main`
   position: relative;
-  min-height: 100vh;
 `;
 
 const StarWrapper = styled.div`
