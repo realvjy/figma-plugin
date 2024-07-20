@@ -175,7 +175,7 @@ export const Content = styled.div`
   width: 260px;
   background: linear-gradient(
       160deg,
-      rgba(103, 103, 103, 0.2) 14%,
+      rgba(103, 103, 103, 0.25) 14%,
       rgba(14, 14, 14, 0.2) 97.3%
     ),
     #0c0c0c;
