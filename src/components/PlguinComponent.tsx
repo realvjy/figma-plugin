@@ -2,7 +2,7 @@
 import { pluginDatatype } from "@/lib/plguin-data";
 import styled from "styled-components";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { ArrowIcon } from "@/lib/common";
 import TypingEffect from "./TypingEffect";
 
@@ -23,6 +23,7 @@ export default function PluginComponent({
 
   const [transformOrigin, setTransformOrigin] = useState("center center");
   const [isHovered, setIsHovered] = useState(false);
+  const delayTimeout = useRef<number | null>(null);
 
   const handleMouseEnter = (
     e: React.MouseEvent<HTMLDivElement, MouseEvent>
@@ -70,7 +71,11 @@ export default function PluginComponent({
             <div className={"info"}>
               <TypingEffect words={words} />
             </div>
-            <Badge className="free">{pluginData.type}</Badge>
+            <Badge
+              className={`${pluginData.type === "free" ? "free" : "freemium"}`}
+            >
+              {pluginData.type}
+            </Badge>
           </ContentMeta>
         </TextInfo>
         <Thumbnail>
@@ -131,7 +136,7 @@ export const Wrapper = styled.div`
 
   .credit {
     position: absolute;
-    transform: rotate(-90deg) translateX(-100%);
+    transform: rotate(-90deg) translateX(-105%);
     left: -36px;
     font-size: 12px;
     text-transform: uppercase;
@@ -174,10 +179,10 @@ export const Content = styled.div`
       rgba(14, 14, 14, 0.2) 97.3%
     ),
     #0c0c0c;
-  box-shadow: 0.6px 0.6px 0px rgba(255, 255, 255, 0.25),
+  box-shadow: 0.6px 0.6px 0px rgba(255, 255, 255, 0.297),
     inset 0px 4.8px 4.8px rgba(0, 0, 0, 0.2),
-    inset 0px 2.4px 1.2px rgba(0, 0, 0, 0.45);
-  border-radius: 10px;
+    inset 2px 3px 1.2px rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
 `;
 
 export const ContentMeta = styled.div`
@@ -219,13 +224,17 @@ export const ContentMeta = styled.div`
 `;
 
 const Badge = styled.div`
-  background-color: #2a2829;
+  background-color: rgba(95, 95, 95, 0.2);
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 2px 4px;
+  border-radius: 2px;
+  padding: 2px 6px;
+  &.freemium {
+    color: #fffa6d;
+  }
   &.free {
-    color: #9cf67a;
+    color: #68ff32;
   }
 `;
 export const PluginLogo = styled.div`
@@ -247,7 +256,7 @@ export const PluginLogo = styled.div`
     z-index: 1;
     height: 26px;
     border-radius: 6px;
-
+    filter: drop-shadow(1px 1px 4px rgba(255, 0, 0, 0.4));
     border: 1px solid rgba(220, 220, 220, 0.2);
   }
 `;
@@ -257,6 +266,7 @@ export const PluginTitle = styled.h3`
   letter-spacing: 0.3px;
   margin-top: 4px;
   text-transform: uppercase;
+  text-shadow: 2px 2px 0.2px rgba(0, 0, 0, 0.7);
   @media screen and (max-width: 500px) {
   }
 `;

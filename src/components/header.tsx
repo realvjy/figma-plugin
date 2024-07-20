@@ -41,8 +41,15 @@ const Wrapper = styled.div`
 `;
 const LogoWrapper = styled(Link)`
   display: flex;
+  margin-bottom: 6px;
   img {
-    max-width: 72px;
+    max-width: 64px;
+    transition: transform 1200ms ease;
+    filter: drop-shadow(1px 3px 1px rgba(0, 0, 0, 0.9))
+      drop-shadow(3px 2px 6px rgba(0, 0, 0, 0.5));
+    &:hover {
+      transform: rotate(360deg);
+    }
   }
   .logo {
     width: auto;

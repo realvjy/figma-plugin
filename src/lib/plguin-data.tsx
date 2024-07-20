@@ -3,7 +3,7 @@ export type pluginDatatype = {
   manifestId: string;
   slug: string;
   author: string;
-  type: "free" | "paid" | "freemium";
+  type: "free" | "paid" | "freemium" | "soon";
   hide?: false;
   featured?: false;
   downloads: number;
@@ -116,9 +116,21 @@ export const pluginData: pluginDatatype[] = [
     description: "A widget to generate colors and gradients",
     author: "realvjy",
     type: "free",
-    downloads: 19.5,
+    downloads: 195000,
     likes: 606,
     figmaurl:
       "https://www.figma.com/community/widget/1128028298799358676/random-hues",
+  },
+  {
+    id: 8,
+    name: "Project Dots",
+    manifestId: "1128028298799358676",
+    slug: "project-dots",
+    description: "Generate random dots like stippling on a path",
+    author: "realvjy",
+    type: "soon",
+    downloads: 0,
+    likes: 0,
+    figmaurl: "https://x.com/realvjy/status/1628367876238475267",
   },
 ];

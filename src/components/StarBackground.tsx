@@ -4,35 +4,37 @@ interface StarProps {
   x: number;
   y: number;
   radius: number;
-  initialOpacity: number;
-  twinkleSpeed: number;
+  opacity: number;
+  twinkleSpeed: number | null;
 }
 
-const Star: React.FC<StarProps> = ({
-  x,
-  y,
-  radius,
-  initialOpacity,
-  twinkleSpeed,
-}) => (
-  <circle cx={x} cy={y} r={radius} fill="white">
-    <animate
-      attributeName="opacity"
-      values={`${initialOpacity};${initialOpacity * 0.3};${initialOpacity}`}
-      dur={`${twinkleSpeed}s`}
-      repeatCount="indefinite"
-    />
+const Star: React.FC<StarProps> = ({ x, y, radius, opacity, twinkleSpeed }) => (
+  <circle cx={x} cy={y} r={radius} fill="white" opacity={opacity}>
+    {twinkleSpeed !== null && (
+      <animate
+        attributeName="opacity"
+        values={`${opacity};${opacity * 0.3};${opacity}`}
+        dur={`${twinkleSpeed}s`}
+        repeatCount="indefinite"
+      />
+    )}
   </circle>
 );
 
 interface StarBackgroundProps {
   starDensity?: number;
-  twinkleSpeed?: number;
+  allStarsTwinkle?: boolean;
+  twinkleProbability?: number;
+  minTwinkleSpeed?: number;
+  maxTwinkleSpeed?: number;
 }
 
 const StarBackground: React.FC<StarBackgroundProps> = ({
-  starDensity = 0.0001,
-  twinkleSpeed = 0.2,
+  starDensity = 0.00015,
+  allStarsTwinkle = true,
+  twinkleProbability = 0.7,
+  minTwinkleSpeed = 0.5,
+  maxTwinkleSpeed = 1,
 }) => {
   const [stars, setStars] = useState<StarProps[]>([]);
   const containerRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
@@ -40,13 +42,20 @@ const StarBackground: React.FC<StarBackgroundProps> = ({
   const generateStars = (width: number, height: number): StarProps[] => {
     const area = width * height;
     const numStars = Math.floor(area * starDensity);
-    return Array.from({ length: numStars }, () => ({
-      x: Math.random() * width,
-      y: Math.random() * height,
-      radius: Math.random() * 0.2 + 0.5, // Random radius between 1 and 2
-      initialOpacity: Math.random() * 0.0 + 1, // Random opacity between 0.5 and 1
-      twinkleSpeed: 0.5 + Math.random() * 1.5, // Adjusted for faster twinkling (0.5 to 2 seconds)
-    }));
+    return Array.from({ length: numStars }, () => {
+      const shouldTwinkle =
+        allStarsTwinkle || Math.random() < twinkleProbability;
+      return {
+        x: Math.random() * width,
+        y: Math.random() * height,
+        radius: Math.random() * 0.05 + 0.5, // Random radius between 0.5 and 0.7
+        opacity: Math.random() * 0.5 + 0.5, // Random opacity between 0.5 and 1
+        twinkleSpeed: shouldTwinkle
+          ? minTwinkleSpeed +
+            Math.random() * (maxTwinkleSpeed - minTwinkleSpeed)
+          : null,
+      };
+    });
   };
 
   useEffect(() => {
@@ -69,7 +78,13 @@ const StarBackground: React.FC<StarBackgroundProps> = ({
         resizeObserver.unobserve(containerRef.current);
       }
     };
-  }, [starDensity]);
+  }, [
+    starDensity,
+    allStarsTwinkle,
+    twinkleProbability,
+    minTwinkleSpeed,
+    maxTwinkleSpeed,
+  ]);
 
   return (
     <div ref={containerRef} style={{ width: "100%", height: "100%" }}>
