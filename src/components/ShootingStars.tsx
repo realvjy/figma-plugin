@@ -41,13 +41,13 @@ const ShootingStars: React.FC = () => {
         y,
         angle,
         scale: 1,
-        speed: Math.random() * 10 + 2, // Increased speed range
+        speed: Math.random() * 20 + 10, // Increased speed range
         distance: 0,
       };
       setStar(newStar);
 
       // Set a random delay (between 0.5 and 4 seconds) for creating the next star
-      const randomDelay = Math.random() * 6500 + 4200; // Convert to milliseconds
+      const randomDelay = Math.random() * 4500 + 4200;
       setTimeout(createStar, randomDelay);
     };
 
