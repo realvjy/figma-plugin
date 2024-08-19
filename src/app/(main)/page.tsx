@@ -19,7 +19,7 @@ export default function Home() {
           <MainWrapper>
             {pluginData.map((data) => {
               return (
-                <Link href={data.figmaurl}>
+                <Link href={data.figmaurl} key={data.id}>
                   <PluginComponent pluginData={data} />
                 </Link>
               );

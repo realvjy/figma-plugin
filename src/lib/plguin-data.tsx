@@ -128,10 +128,11 @@ export const pluginData: pluginDatatype[] = [
     slug: "shape-shifter",
     description: "Figma companion for vector/illustration work",
     author: "realvjy",
-    type: "soon",
-    downloads: 0,
-    likes: 0,
-    figmaurl: "https://x.com/realvjy/status/1820430534465761575",
+    type: "free",
+    downloads: 5,
+    likes: 2,
+    figmaurl:
+      "https://www.figma.com/community/plugin/1406930998097962760/shape-shifter",
   },
   {
     id: 11,

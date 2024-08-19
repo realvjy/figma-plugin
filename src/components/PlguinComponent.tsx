@@ -39,8 +39,12 @@ export default function PluginComponent({
     setIsHovered(false);
   };
   const words = [
-    { key: "likes", type: `stat`, value: `${likes}` },
-    { key: "usage", type: `stat`, value: `${downloads}` },
+    { key: "likes", type: `stat`, value: `${likes === "0" ? "new" : likes}` },
+    {
+      key: "usage",
+      type: `stat`,
+      value: `${downloads === "0" ? "new" : downloads}`,
+    },
   ];
 
   return (
