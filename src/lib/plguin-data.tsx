@@ -142,8 +142,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Generate dots like stippling or halftone effect",
     author: "realvjy",
     type: "soon",
-    downloads: 0,
-    likes: 0,
-    figmaurl: "https://x.com/realvjy/status/1819336768186966294",
+    downloads: 5,
+    likes: 3,
+    figmaurl: "https://s.vjy.me/stippling",
   },
 ];
