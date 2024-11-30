@@ -15,7 +15,6 @@ export type pluginDatatype = {
 };
 
 // see public folder for thumbnail and logos
-// TODO: automate fetching downloads
 export const pluginData: pluginDatatype[] = [
   {
     id: 1,
@@ -25,8 +24,8 @@ export const pluginData: pluginDatatype[] = [
     slug: "3dicons",
     author: "realvjy",
     type: "free",
-    downloads: 169000,
-    likes: 1700,
+    downloads: 190000,
+    likes: 2100,
     figmaurl:
       "https://www.figma.com/community/plugin/1107546399747513238/3dicons",
   },
@@ -38,8 +37,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Create cool gradient backgrounds with noise",
     author: "realvjy",
     type: "freemium",
-    downloads: 200000,
-    likes: 3300,
+    downloads: 210000,
+    likes: 3400,
     figmaurl:
       "https://www.figma.com/community/plugin/1174390287006360600/noisy-gradients",
   },
@@ -64,8 +63,8 @@ export const pluginData: pluginDatatype[] = [
     slug: "uilogos",
     author: "realvjy",
     type: "free",
-    downloads: 22000,
-    likes: 218000,
+    downloads: 25000,
+    likes: 490,
     figmaurl:
       "https://www.figma.com/community/plugin/1120667703468196103/uilogos",
   },
@@ -77,8 +76,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Explore millions of color hues/shades/tones & gradients",
     author: "realvjy",
     type: "free",
-    downloads: 5100,
-    likes: 200,
+    downloads: 7100,
+    likes: 290,
     figmaurl:
       "https://www.figma.com/community/plugin/1361736324008749685/hues-gradients",
   },
@@ -90,8 +89,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Generate photoshop like gradient map in figma.",
     author: "realvjy",
     type: "free",
-    downloads: 8600,
-    likes: 210,
+    downloads: 11000,
+    likes: 310,
     figmaurl:
       "https://www.figma.com/community/plugin/1280452653001223747/gradient-map",
   },
@@ -103,8 +102,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Generate SVG react components from selected object.",
     author: "realvjy",
     type: "free",
-    downloads: 1700,
-    likes: 64,
+    downloads: 2400,
+    likes: 100,
     figmaurl:
       "https://www.figma.com/community/plugin/1348045528828166727/svg-to-code-react-component",
   },
@@ -116,8 +115,8 @@ export const pluginData: pluginDatatype[] = [
     description: "A widget to generate colors and gradients",
     author: "realvjy",
     type: "free",
-    downloads: 6500,
-    likes: 268,
+    downloads: 7000,
+    likes: 300,
     figmaurl:
       "https://www.figma.com/community/widget/1128028298799358676/random-hues",
   },
@@ -129,8 +128,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Figma companion for vector/illustration work",
     author: "realvjy",
     type: "free",
-    downloads: 3300,
-    likes: 160,
+    downloads: 3900,
+    likes: 206,
     figmaurl:
       "https://www.figma.com/community/plugin/1406930998097962760/shape-shifter",
   },
@@ -142,8 +141,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Generate dots like stippling or halftone effect",
     author: "realvjy",
     type: "free",
-    downloads: 5700,
-    likes: 616,
+    downloads: 7400,
+    likes: 750,
     figmaurl: "https://s.vjy.me/stippling",
   },
   {
@@ -154,8 +153,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Easily create and customize invoices directly in Figma",
     author: "realvjy",
     type: "free",
-    downloads: 10,
-    likes: 10,
+    downloads: 1300,
+    likes: 130,
     figmaurl: "https://s.vjy.me/invoice-plugin",
   },
   {
@@ -169,5 +168,29 @@ export const pluginData: pluginDatatype[] = [
     downloads: 0,
     likes: 0,
     figmaurl: "https://s.vjy.me/project-wave",
+  },
+  {
+    id: 14,
+    name: "Project DS",
+    manifestId: "1430118694216929246",
+    slug: "project-ds",
+    description: "Generate Color and typography variables",
+    author: "realvjy",
+    type: "soon",
+    downloads: 0,
+    likes: 0,
+    figmaurl: "https://s.vjy.me/project-ds",
+  },
+  {
+    id: 15,
+    name: "Project Animate",
+    manifestId: "1430118694216929246",
+    slug: "project-animate",
+    description: "Create smart component with predefine animation",
+    author: "realvjy",
+    type: "soon",
+    downloads: 0,
+    likes: 0,
+    figmaurl: "https://x.com/realvjy",
   },
 ];
