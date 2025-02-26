@@ -53,7 +53,7 @@ export const pluginData: pluginDatatype[] = [
     type: "free",
     downloads: 218000,
     likes: 504,
-    figmaurl: "https://www.figma.com/community/file/810922307190314237",
+    figmaurl: "https://www.figma.com/community/plugin/1124370159336948073",
   },
   {
     id: 4,
