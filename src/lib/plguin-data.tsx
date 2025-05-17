@@ -5,7 +5,7 @@ export type pluginDatatype = {
   author: string;
   type: "free" | "paid" | "freemium" | "soon";
   hide?: false;
-  featured?: false;
+  featured?: boolean;
   downloads: number;
   likes: number;
   logoType?: "circle";
@@ -37,8 +37,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Create cool gradient backgrounds with noise",
     author: "realvjy",
     type: "freemium",
-    downloads: 230000,
-    likes: 3500,
+    downloads: 250000,
+    likes: 4500,
     figmaurl:
       "https://www.figma.com/community/plugin/1174390287006360600/noisy-gradients",
   },
@@ -51,7 +51,7 @@ export const pluginData: pluginDatatype[] = [
       "Insert all 120+ illustrations from the illustrations.co open-source library",
     author: "realvjy",
     type: "free",
-    downloads: 218000,
+    downloads: 55000,
     likes: 504,
     figmaurl: "https://www.figma.com/community/plugin/1124370159336948073",
   },
@@ -140,9 +140,9 @@ export const pluginData: pluginDatatype[] = [
     slug: "stippling",
     description: "Generate dots like stippling or halftone effect",
     author: "realvjy",
-    type: "free",
-    downloads: 10000,
-    likes: 900,
+    type: "freemium",
+    downloads: 14000,
+    likes: 1200,
     figmaurl: "https://s.vjy.me/stippling",
   },
   {
@@ -153,8 +153,8 @@ export const pluginData: pluginDatatype[] = [
     description: "Create smart component with predefine animation set",
     author: "realvjy",
     type: "free",
-    downloads: 6500,
-    likes: 200,
+    downloads: 11000,
+    likes: 400,
     figmaurl: "https://www.figma.com/community/plugin/1470719638106565683",
   },
   {
@@ -183,14 +183,15 @@ export const pluginData: pluginDatatype[] = [
   },
   {
     id: 14,
-    name: "Project DS",
-    manifestId: "1430118694216929246",
-    slug: "project-ds",
-    description: "Generate Color and typography variables",
+    name: "Kigen",
+    manifestId: "1499119094608975695",
+    slug: "kigen",
+    description: "Generate design system Variables and styles quickly from presets",
     author: "realvjy",
-    type: "soon",
-    downloads: 0,
-    likes: 0,
-    figmaurl: "https://s.vjy.me/project-ds",
+    featured: true,
+    type: "free",
+    downloads: 1000,
+    likes: 120,
+    figmaurl: "https://s.vjy.me/kigen-plugin",
   }
 ];

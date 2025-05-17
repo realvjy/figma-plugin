@@ -11,19 +11,25 @@ import Link from "next/link";
 
 export default function Home() {
   const randomCoolshape = getRandomShape({ onlyId: true }) as any;
+  const sortedPlugins = [...pluginData].sort((a, b) => {
+    // First sort by featured status (featured first)
+    if (a.featured && !b.featured) return -1;
+    if (!a.featured && b.featured) return 1;
+
+    // If both are featured or both are not, sort by downloads (descending)
+    return b.downloads - a.downloads;
+  });
   return (
     <MainPage>
       <Header shape={randomCoolshape} />
       <MainSection>
         <div className="container">
           <MainWrapper>
-            {pluginData.map((data) => {
-              return (
-                <Link href={data.figmaurl} key={data.id} target="_blank">
-                  <PluginComponent pluginData={data} />
-                </Link>
-              );
-            })}
+            {sortedPlugins.map((data) => (
+              <Link href={data.figmaurl} key={data.id} target="_blank">
+                <PluginComponent pluginData={data} />
+              </Link>
+            ))}
           </MainWrapper>
         </div>
       </MainSection>
