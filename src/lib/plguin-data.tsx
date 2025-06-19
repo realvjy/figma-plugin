@@ -190,8 +190,22 @@ export const pluginData: pluginDatatype[] = [
     author: "realvjy",
     featured: true,
     type: "free",
-    downloads: 1000,
-    likes: 120,
+    downloads: 5000,
+    likes: 420,
     figmaurl: "https://s.vjy.me/kigen-plugin",
+  },
+
+  {
+    id: 15,
+    name: "Distort",
+    manifestId: "1499119094608975695",
+    slug: "distort",
+    description: "Create illustrator like Pucker & Bloat ",
+    author: "realvjy",
+    featured: true,
+    type: "free",
+    downloads: 0,
+    likes: 0,
+    figmaurl: "https://s.vjy.me/distort-figma",
   }
 ];
